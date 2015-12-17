@@ -1,11 +1,12 @@
-# How to set Xubuntu VM to use TOR whonix gateway
+# How to set Xubuntu VM to use TOR Whonix gateway
 
 Default [whonix](https://www.whonix.org/) workstation is
-based on Debian 32 bit. This is OK for most cases. However, the 32-bit version
-of Debian may limit some uses. For example, its difficult to use
-[Monero](https://getmonero.org/) on a 32-bit Linux. Monero works best
-with 64-bit operating systems. Also some people may night be big fans of Debian,
-and would like to use something else, such as Ubuntu 15.10. However, for use in a VirtualBox,
+based on Debian 8.2 32 bit. This is OK for most cases, since this
+Debain version is from 2015.  However, the 32-bit version
+of Debian may limit some use cases. For example, its difficult to use
+[Monero](https://getmonero.org/) on a 32-bit Linux system. Monero works best
+with 64-bit operating systems. Also some people may night be not
+big fans of Debian, and would like to use something else, such as Ubuntu 15.10. However, for use in a VirtualBox,
 Xubuntu is be better because xfce is much lighter than Unity.
 
 This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that it
@@ -34,7 +35,7 @@ and download the latest workstation image. At the moment of writing this,
   - locate the `Whonix-Gateway-12.0.0.3.2.ova` downloaded
   - follow the prompts to import the image.
 
-## Step 3: Install Xubuntu in the VirtualBox
+## Step 2: Install Xubuntu in the VirtualBox
 
   - `Machine->New` and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest monero in
      the VirtualBox.       
@@ -45,14 +46,14 @@ and download the latest workstation image. At the moment of writing this,
   - You can also install guest additions if you want, to make the interacting with the Xubuntu VM easier.
 
 
-## Step 4: Change Xubuntu's network to use Whonix network
+## Step 3: Change Xubuntu's network to use Whonix network
 
  - `Machine->Settings->Network` and change Adapter 1 from NAT into Internal Network.
  - Make sure that the Name is `Whonix`.
 
 ![Network setup](https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/network_setup.jpg)
 
-## Step 5: Remove dhcp auto-configuraion packages from Xubuntu
+## Step 4: Remove dhcp auto-configuraion packages from Xubuntu
 
 You can make VirtualBox snapshot here, just in case something does not work later on,
 and you would like to undo the changes.
@@ -60,7 +61,7 @@ and you would like to undo the changes.
 ```bash
 sudo apt-get remove isc-dhcp-client isc-dhcp-common network-manager network-manager-gnome resolvconf
 ```
-## Step 6: Check the Whonix Gateway IP and network subnet
+## Step 5: Check the Whonix Gateway IP and network subnet
 
 Start the Whonix Gateway and follow the prompts. Once done, check the gateway IP address and network mask.
 I used the following command:
@@ -160,7 +161,7 @@ The only problem is initial synchronization, as it will take ages
 through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current
 blockchain is obtained it can be copied into Xubuntu VM.
 
-Running the bitcoin node through tor does not take much bandwitch
+Running the bitcoin node through tor does not take much bandwidth
 or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data.
 
 
