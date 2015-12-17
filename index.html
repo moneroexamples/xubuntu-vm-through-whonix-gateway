@@ -20,14 +20,15 @@
 
     <section class="main-content">
       <h1>
-<a id="how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" class="anchor" href="#how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to set Xubuntu VM to use TOR whonix gateway</h1>
+<a id="how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" class="anchor" href="#how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to set Xubuntu VM to use TOR Whonix gateway</h1>
 
 <p>Default <a href="https://www.whonix.org/">whonix</a> workstation is
-based on Debian 32 bit. This is OK for most cases. However, the 32-bit version
-of Debian may limit some uses. For example, its difficult to use
-<a href="https://getmonero.org/">Monero</a> on a 32-bit Linux. Monero works best
-with 64-bit operating systems. Also some people may night be big fans of Debian,
-and would like to use something else, such as Ubuntu 15.10. However, for use in a VirtualBox,
+based on Debian 8.2 32 bit. This is OK for most cases, since this
+Debain version is from 2015.  However, the 32-bit version
+of Debian may limit some use cases. For example, its difficult to use
+<a href="https://getmonero.org/">Monero</a> on a 32-bit Linux system. Monero works best
+with 64-bit operating systems. Also some people may night be not
+big fans of Debian, and would like to use something else, such as Ubuntu 15.10. However, for use in a VirtualBox,
 Xubuntu is be better because xfce is much lighter than Unity.</p>
 
 <p>This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that it
@@ -59,7 +60,7 @@ and download the latest workstation image. At the moment of writing this,
 </ul>
 
 <h2>
-<a id="step-3-install-xubuntu-in-the-virtualbox" class="anchor" href="#step-3-install-xubuntu-in-the-virtualbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Install Xubuntu in the VirtualBox</h2>
+<a id="step-2-install-xubuntu-in-the-virtualbox" class="anchor" href="#step-2-install-xubuntu-in-the-virtualbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Install Xubuntu in the VirtualBox</h2>
 
 <ul>
 <li>
@@ -74,7 +75,7 @@ and install everything through tor.</li>
 </ul>
 
 <h2>
-<a id="step-4-change-xubuntus-network-to-use-whonix-network" class="anchor" href="#step-4-change-xubuntus-network-to-use-whonix-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Change Xubuntu's network to use Whonix network</h2>
+<a id="step-3-change-xubuntus-network-to-use-whonix-network" class="anchor" href="#step-3-change-xubuntus-network-to-use-whonix-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Change Xubuntu's network to use Whonix network</h2>
 
 <ul>
 <li>
@@ -85,7 +86,7 @@ and install everything through tor.</li>
 <p><img src="https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/network_setup.jpg" alt="Network setup"></p>
 
 <h2>
-<a id="step-5-remove-dhcp-auto-configuraion-packages-from-xubuntu" class="anchor" href="#step-5-remove-dhcp-auto-configuraion-packages-from-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 5: Remove dhcp auto-configuraion packages from Xubuntu</h2>
+<a id="step-4-remove-dhcp-auto-configuraion-packages-from-xubuntu" class="anchor" href="#step-4-remove-dhcp-auto-configuraion-packages-from-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Remove dhcp auto-configuraion packages from Xubuntu</h2>
 
 <p>You can make VirtualBox snapshot here, just in case something does not work later on,
 and you would like to undo the changes.</p>
@@ -93,7 +94,7 @@ and you would like to undo the changes.</p>
 <div class="highlight highlight-source-shell"><pre>sudo apt-get remove isc-dhcp-client isc-dhcp-common network-manager network-manager-gnome resolvconf</pre></div>
 
 <h2>
-<a id="step-6-check-the-whonix-gateway-ip-and-network-subnet" class="anchor" href="#step-6-check-the-whonix-gateway-ip-and-network-subnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Check the Whonix Gateway IP and network subnet</h2>
+<a id="step-5-check-the-whonix-gateway-ip-and-network-subnet" class="anchor" href="#step-5-check-the-whonix-gateway-ip-and-network-subnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 5: Check the Whonix Gateway IP and network subnet</h2>
 
 <p>Start the Whonix Gateway and follow the prompts. Once done, check the gateway IP address and network mask.
 I used the following command:</p>
@@ -177,7 +178,7 @@ latest monero. How to compile it can be found at
 through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current
 blockchain is obtained it can be copied into Xubuntu VM.</p>
 
-<p>Running the bitcoin node through tor does not take much bandwitch
+<p>Running the bitcoin node through tor does not take much bandwidth
 or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data.</p>
 
 <h2>
