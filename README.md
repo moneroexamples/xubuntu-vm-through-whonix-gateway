@@ -48,6 +48,7 @@ and download the latest workstation image. At the moment of writing this,
  - Make sure that the Name is Whonix.
 
 
+![Network setup](img/network_setup.jpg)
 
 ## How can you help?
 
