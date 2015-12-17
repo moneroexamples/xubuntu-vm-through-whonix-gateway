@@ -23,16 +23,15 @@
 <a id="how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" class="anchor" href="#how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to set Xubuntu VM to use TOR Whonix gateway</h1>
 
 <p>Default <a href="https://www.whonix.org/">whonix</a> workstation is
-based on Debian 8.2 32 bit. This is OK for most cases, since this
-Debain version is from 2015.  However, the 32-bit version
+based on 32-bit Debian 8.2. This is OK for most cases, since this
+Debian version is from 2015. However, the 32-bit version
 of Debian may limit some use cases. For example, its difficult to use
 <a href="https://getmonero.org/">Monero</a> on a 32-bit Linux system. Monero works best
-with 64-bit operating systems. Also some people may night be not
-big fans of Debian, and would like to use something else, such as Ubuntu 15.10. However, for use in a VirtualBox,
-Xubuntu is be better because xfce is much lighter than Unity.</p>
+with 64-bit operating systems. Also some people may not<br>
+not want to use Denian, and would like to use something else, such as Ubuntu 15.10. In fact, for use in a VirtualBox,
+Xubuntu is be better because Xfce is much lighter than Unity.</p>
 
-<p>This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that it
-goes through Whonix Tor gateway.</p>
+<p>This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that its internet traffic goes through Whonix Tor gateway.</p>
 
 <p><strong>Please be aware, that not using official
 Whonix workstation may reduce your security and anonymity!
@@ -64,11 +63,10 @@ and download the latest workstation image. At the moment of writing this,
 
 <ul>
 <li>
-<code>Machine-&gt;New</code> and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest monero in
- the VirtualBox.<br>
+<code>Machine-&gt;New</code> and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest Monero in the VirtualBox.<br>
 </li>
 <li>Install Xubuntu as you would normally do it. In this example, I called it u1555.</li>
-<li>Install any software you need now (e.g.,stuff needed to compile latest monero, vim, etc.),
+<li>Install any software you need now (e.g.,stuff needed to compile latest Monero, vim, etc.),
 before connecting the Xubuntu to the Whonix gateway. Its much faster now, than updating
 and install everything through tor.</li>
 <li>You can also install guest additions if you want, to make the interacting with the Xubuntu VM easier.</li>
@@ -122,8 +120,7 @@ I used the following command:</p>
 <h2>
 <a id="step-7-make-enp0s3-use-whonix-gateway" class="anchor" href="#step-7-make-enp0s3-use-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 7: Make enp0s3 use Whonix gateway</h2>
 
-<p>Need to set static IP for Xubuntu from Whonix network. Thus we need ip of the form
-<code>10.152.152.xx</code> where xx is more than 10. For example, <code>10.152.152.15</code>.</p>
+<p>Need to set static IP for Xubuntu from Whonix network. Thus we need IP of the form <code>10.152.152.xx</code> where xx is more than 10. For example <code>10.152.152.15</code>.</p>
 
 <div class="highlight highlight-source-shell"><pre>sudo nano /etc/network/interfaces</pre></div>
 
@@ -157,7 +154,7 @@ nameserver 10.152.152.10</pre></div>
 <a id="step-8-restart-xubuntu" class="anchor" href="#step-8-restart-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 8: Restart Xubuntu</h2>
 
 <p>Make sure Whonix Gateway is working and restart the Xubuntu. After that, Xubuntu should use
-the Whonix Gateway for all internet trafic.</p>
+the Whonix Gateway for all internet traffic.</p>
 
 <p>And now everything should work. You can start <code>firefox</code> and check your ip address at <a href="https://check.torproject.org/">tor check website</a> or in console using <code>elinks</code> or <code>lynx</code>.</p>
 
@@ -171,15 +168,16 @@ the Whonix Gateway for all internet trafic.</p>
 <a id="monero-in-xubuntu-vm-through-whonix-gateway" class="anchor" href="#monero-in-xubuntu-vm-through-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>Monero in Xubuntu VM through Whonix Gateway</h2>
 
 <p>Because we use Xubuntu 64-bit there is no issues with running
-latest monero. How to compile it can be found at
+latest Monero. How to compile it can be found at
 <a href="http://moneroexamples.github.io/compile-monero-ubuntu-1510/">compile-monero-ubuntu-1510</a>.</p>
 
 <p>The only problem is initial synchronization, as it will take ages
 through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current
 blockchain is obtained it can be copied into Xubuntu VM.</p>
 
-<p>Running the bitcoin node through tor does not take much bandwidth
-or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data.</p>
+<p>Running the Monero node through tor does not take much bandwidth
+or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data. Also, it wont be full node, as
+other nodes will not be able to connect to you.</p>
 
 <h2>
 <a id="how-can-you-help" class="anchor" href="#how-can-you-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can you help?</h2>
