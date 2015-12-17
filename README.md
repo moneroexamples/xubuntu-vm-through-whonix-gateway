@@ -179,7 +179,7 @@ blockchain is obtained it can be copied blockchain files into Xubuntu VM.
 
 Running the bitcoin node through tor does not take much bandwitch
 or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires
-downloading ~8GB or more of date.
+downloading ~8GB or more of data.
 
 
 ## How can you help?
