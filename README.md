@@ -57,7 +57,7 @@ and download the latest workstation image. At the moment of writing this,
  - `Machine->Settings->Network` and change Adapter 1 from NAT into Internal Network.
  - Make sure that the Name is Whonix.
 
-![Network setup](img/network_setup.jpg)
+![Network setup](https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/network_setup.jpg)
 
 ## Step 5: Remove dhcp auto-configuraion packages from Xubuntu.
 
@@ -76,7 +76,7 @@ I used the following command:
 cat /etc/network/interfaces.d/30_non-qubes-whonix
 ```
 
-![Gateway IP address](img/gateway_ip.jpg)
+![Gateway IP address](https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/gateway_ip.jpg)
 
 
 ## Step 6: Check the name of network interface in Xubuntu.
