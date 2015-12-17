@@ -1,16 +1,15 @@
 # How to set Xubuntu VM to use TOR Whonix gateway
 
 Default [whonix](https://www.whonix.org/) workstation is
-based on Debian 8.2 32 bit. This is OK for most cases, since this
-Debain version is from 2015.  However, the 32-bit version
+based on 32-bit Debian 8.2. This is OK for most cases, since this
+Debian version is from 2015. However, the 32-bit version
 of Debian may limit some use cases. For example, its difficult to use
 [Monero](https://getmonero.org/) on a 32-bit Linux system. Monero works best
-with 64-bit operating systems. Also some people may night be not
-big fans of Debian, and would like to use something else, such as Ubuntu 15.10. However, for use in a VirtualBox,
-Xubuntu is be better because xfce is much lighter than Unity.
+with 64-bit operating systems. Also some people may not  
+not want to use Denian, and would like to use something else, such as Ubuntu 15.10. In fact, for use in a VirtualBox,
+Xubuntu is be better because Xfce is much lighter than Unity.
 
-This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that it
-goes through Whonix Tor gateway.
+This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that its internet traffic goes through Whonix Tor gateway.
 
 **Please be aware, that not using official
 Whonix workstation may reduce your security and anonymity!
@@ -37,10 +36,9 @@ and download the latest workstation image. At the moment of writing this,
 
 ## Step 2: Install Xubuntu in the VirtualBox
 
-  - `Machine->New` and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest monero in
-     the VirtualBox.       
+  - `Machine->New` and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest Monero in the VirtualBox.       
   - Install Xubuntu as you would normally do it. In this example, I called it u1555.
-  - Install any software you need now (e.g.,stuff needed to compile latest monero, vim, etc.),
+  - Install any software you need now (e.g.,stuff needed to compile latest Monero, vim, etc.),
    before connecting the Xubuntu to the Whonix gateway. Its much faster now, than updating
    and install everything through tor.
   - You can also install guest additions if you want, to make the interacting with the Xubuntu VM easier.
@@ -95,8 +93,7 @@ So the interface name is `enp0s3`.
 
 ## Step 7: Make enp0s3 use Whonix gateway
 
-Need to set static IP for Xubuntu from Whonix network. Thus we need ip of the form
-`10.152.152.xx` where xx is more than 10. For example, `10.152.152.15`.
+Need to set static IP for Xubuntu from Whonix network. Thus we need IP of the form `10.152.152.xx` where xx is more than 10. For example `10.152.152.15`.
 
 ```bash
 sudo nano /etc/network/interfaces
@@ -137,7 +134,7 @@ nameserver 10.152.152.10
 ## Step 8: Restart Xubuntu
 
 Make sure Whonix Gateway is working and restart the Xubuntu. After that, Xubuntu should use
-the Whonix Gateway for all internet trafic.
+the Whonix Gateway for all internet traffic.
 
 And now everything should work. You can start `firefox` and check your ip address at [tor check website](https://check.torproject.org/) or in console using `elinks` or `lynx`.
 
@@ -154,15 +151,16 @@ elinks https://check.torproject.org/
 ## Monero in Xubuntu VM through Whonix Gateway
 
 Because we use Xubuntu 64-bit there is no issues with running
-latest monero. How to compile it can be found at
+latest Monero. How to compile it can be found at
 [compile-monero-ubuntu-1510](http://moneroexamples.github.io/compile-monero-ubuntu-1510/).
 
 The only problem is initial synchronization, as it will take ages
 through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current
 blockchain is obtained it can be copied into Xubuntu VM.
 
-Running the bitcoin node through tor does not take much bandwidth
-or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data.
+Running the Monero node through tor does not take much bandwidth
+or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data. Also, it wont be full node, as
+other nodes will not be able to connect to you.
 
 
 ## How can you help?
