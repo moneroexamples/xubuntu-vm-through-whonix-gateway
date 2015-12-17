@@ -157,6 +157,15 @@ the Whonix Gateway for all internet trafic.
 
 And now everything should work. You can start `firefox` and check your ip address at [tor check website](https://check.torproject.org/) or in console using `elinks` or `lynx`.
 
+For example: 
+
+```bash
+elinks https://check.torproject.org/
+```
+
+![Tor check](https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/tor_check.jpg)
+
+
 
 ## Monero in Xubuntu VM through Whonix Gateway
 
