@@ -23,12 +23,12 @@
 <a id="how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" class="anchor" href="#how-to-set-xubuntu-vm-to-use-tor-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to set Xubuntu VM to use TOR whonix gateway</h1>
 
 <p>Default <a href="https://www.whonix.org/">whonix</a> workstation is
-based on Debian 32 bit. This is ok for most cases. However, the 32bit version
+based on Debian 32 bit. This is OK for most cases. However, the 32-bit version
 of Debian may limit some uses. For example, its difficult to use
 <a href="https://getmonero.org/">Monero</a> on a 32-bit Linux. Monero works best
-with 64-bit operating systems. Also some people may night be big fans of Debain,
+with 64-bit operating systems. Also some people may night be big fans of Debian,
 and would like to use something else, such as Ubuntu 15.10. However, for use in a VirtualBox,
-Xubuntu is be better because xfxe is much lighter than Unity.</p>
+Xubuntu is be better because xfce is much lighter than Unity.</p>
 
 <p>This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that it
 goes through Whonix Tor gateway.</p>
@@ -37,7 +37,7 @@ goes through Whonix Tor gateway.</p>
 Whonix workstation may reduce your security and anonymity!
 Don't follow this example if you are extra paranoid.</strong></p>
 
-<p>The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10, and are based on those described <a href="https://www.whonix.org/wiki/Ubuntu">here</a>.</p>
+<p>The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10, and are based on those described <a href="https://www.whonix.org/wiki/Ubuntu">here</a>. Probably there are better ways of doing things described below. But these steps were working for me, so hopefully they will work for you as well.</p>
 
 <h2>
 <a id="step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" class="anchor" href="#step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Download Whonix Gateway VritualBox and Xubuntu images</h2>
@@ -67,10 +67,10 @@ and download the latest workstation image. At the moment of writing this,
  the VirtualBox.<br>
 </li>
 <li>Install Xubuntu as you would normally do it. In this example, I called it u1555.</li>
-<li>Install any software you need now (stuff needed to compile latest monero),
+<li>Install any software you need now (e.g.,stuff needed to compile latest monero, vim, etc.),
 before connecting the Xubuntu to the Whonix gateway. Its much faster now, than updating
 and install everything through tor.</li>
-<li>You can also install guest additions.</li>
+<li>You can also install guest additions if you want, to make the interacting with the Xubuntu VM easier.</li>
 </ul>
 
 <h2>
@@ -79,7 +79,7 @@ and install everything through tor.</li>
 <ul>
 <li>
 <code>Machine-&gt;Settings-&gt;Network</code> and change Adapter 1 from NAT into Internal Network.</li>
-<li>Make sure that the Name is Whonix.</li>
+<li>Make sure that the Name is <code>Whonix</code>.</li>
 </ul>
 
 <p><img src="https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/network_setup.jpg" alt="Network setup"></p>
@@ -107,23 +107,14 @@ I used the following command:</p>
 
 <div class="highlight highlight-source-shell"><pre>ifconfing -a</pre></div>
 
-<p>Gives</p>
+<p>Gives (part of the output shown)</p>
 
 <div class="highlight highlight-source-shell"><pre>enp0s3    Link encap:Ethernet  HWaddr 08:00:27:73:b5:e3  
           BROADCAST MULTICAST  MTU:1500  Metric:1
           RX packets:0 errors:0 dropped:0 overruns:0 frame:0
           TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000
-          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-
-lo        Link encap:Local Loopback  
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:360 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:360 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:30435 (30.4 KB)  TX bytes:30435 (30.4 KB)</pre></div>
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</pre></div>
 
 <p>So the interface name is <code>enp0s3</code>.</p>
 
