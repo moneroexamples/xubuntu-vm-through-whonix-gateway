@@ -33,15 +33,11 @@ Xubuntu is be better because xfxe is much lighter than Unity.</p>
 <p>This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that it
 goes through Whonix Tor gateway.</p>
 
-<p>Please be aware, that not using official
-workstation may reduce your security and anonymity, and if you want highest
-level of privacy, just stick with the official Whonix workstation!
-Dont follow this example if you are extra paranoid.</p>
+<p><strong>Please be aware, that not using official
+Whonix workstation may reduce your security and anonymity!
+Don't follow this example if you are extra paranoid.</strong></p>
 
-<p>The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10.</p>
-
-<p>The steps here are based on those described <a href="https://www.whonix.org/wiki/Ubuntu">here</a>. However, that
-tutorial can be found outdated in few places.</p>
+<p>The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10, and are based on those described <a href="https://www.whonix.org/wiki/Ubuntu">here</a>.</p>
 
 <h2>
 <a id="step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" class="anchor" href="#step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Download Whonix Gateway VritualBox and Xubuntu images</h2>
@@ -50,7 +46,7 @@ tutorial can be found outdated in few places.</p>
 and download the latest workstation image. At the moment of writing this,
  it is <code>Whonix-Gateway-12.0.0.3.2.ova</code>.</p>
 
-<p>For Ubuntu, download <code>xubuntu-15.10-desktop-amd64.iso</code> from Xubuntu's <a href="http://xubuntu.org/getxubuntu/">download
+<p>For Xubuntu, download <code>xubuntu-15.10-desktop-amd64.iso</code> from Xubuntu's <a href="http://xubuntu.org/getxubuntu/">download
  page</a>.</p>
 
 <p>## Step 2: Import Whonix workstation to VirtualBox.</p>
@@ -67,21 +63,18 @@ and download the latest workstation image. At the moment of writing this,
 
 <ul>
 <li>
-<code>Machine-&gt;New</code> and follow the prompts. I recommend at least 2GB of ram
- and at least 25 GB of disc space, if you plan to use latest monero in
+<code>Machine-&gt;New</code> and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest monero in
  the VirtualBox.<br>
 </li>
-<li>Install Xubuntu as you would normally do it.</li>
+<li>Install Xubuntu as you would normally do it. In this example, I called it u1555.</li>
 <li>Install any software you need now (stuff needed to compile latest monero),
 before connecting the Xubuntu to the Whonix gateway. Its much faster now, than updating
 and install everything through tor.</li>
-<li>You can also install guest additions. But again, using non offical Whonix
-workstation can reduce your security.<br>
-</li>
+<li>You can also install guest additions.</li>
 </ul>
 
 <h2>
-<a id="step-4-change-xubuntus-network-to-use-whonix-network" class="anchor" href="#step-4-change-xubuntus-network-to-use-whonix-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Change Xubuntu's network to use Whonix network.</h2>
+<a id="step-4-change-xubuntus-network-to-use-whonix-network" class="anchor" href="#step-4-change-xubuntus-network-to-use-whonix-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Change Xubuntu's network to use Whonix network</h2>
 
 <ul>
 <li>
@@ -92,7 +85,7 @@ workstation can reduce your security.<br>
 <p><img src="https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/network_setup.jpg" alt="Network setup"></p>
 
 <h2>
-<a id="step-5-remove-dhcp-auto-configuraion-packages-from-xubuntu" class="anchor" href="#step-5-remove-dhcp-auto-configuraion-packages-from-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 5: Remove dhcp auto-configuraion packages from Xubuntu.</h2>
+<a id="step-5-remove-dhcp-auto-configuraion-packages-from-xubuntu" class="anchor" href="#step-5-remove-dhcp-auto-configuraion-packages-from-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 5: Remove dhcp auto-configuraion packages from Xubuntu</h2>
 
 <p>You can make VirtualBox snapshot here, just in case something does not work later on,
 and you would like to undo the changes.</p>
@@ -100,7 +93,7 @@ and you would like to undo the changes.</p>
 <div class="highlight highlight-source-shell"><pre>sudo apt-get remove isc-dhcp-client isc-dhcp-common network-manager network-manager-gnome resolvconf</pre></div>
 
 <h2>
-<a id="step-6-check-the-whonix-gateway-ip-and-network-subnet" class="anchor" href="#step-6-check-the-whonix-gateway-ip-and-network-subnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Check the Whonix Gateway IP and network subnet.</h2>
+<a id="step-6-check-the-whonix-gateway-ip-and-network-subnet" class="anchor" href="#step-6-check-the-whonix-gateway-ip-and-network-subnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Check the Whonix Gateway IP and network subnet</h2>
 
 <p>Start the Whonix Gateway and follow the prompts. Once done, check the gateway IP address and network mask.
 I used the following command:</p>
@@ -110,7 +103,7 @@ I used the following command:</p>
 <p><img src="https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/gateway_ip.jpg" alt="Gateway IP address"></p>
 
 <h2>
-<a id="step-6-check-the-name-of-network-interface-in-xubuntu" class="anchor" href="#step-6-check-the-name-of-network-interface-in-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Check the name of network interface in Xubuntu.</h2>
+<a id="step-6-check-the-name-of-network-interface-in-xubuntu" class="anchor" href="#step-6-check-the-name-of-network-interface-in-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Check the name of network interface in Xubuntu</h2>
 
 <div class="highlight highlight-source-shell"><pre>ifconfing -a</pre></div>
 
@@ -135,7 +128,7 @@ lo        Link encap:Local Loopback
 <p>So the interface name is <code>enp0s3</code>.</p>
 
 <h2>
-<a id="step-7-make-enp0s3-use-whonix-gateway" class="anchor" href="#step-7-make-enp0s3-use-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 7: Make enp0s3 use Whonix gateway.</h2>
+<a id="step-7-make-enp0s3-use-whonix-gateway" class="anchor" href="#step-7-make-enp0s3-use-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 7: Make enp0s3 use Whonix gateway</h2>
 
 <p>Need to set static IP for Xubuntu from Whonix network. Thus we need ip of the form
 <code>10.152.152.xx</code> where xx is more than 10. For example, <code>10.152.152.15</code>.</p>
@@ -159,8 +152,7 @@ netmask 255.255.192.0
 gateway 10.152.152.10  
 </pre></div>
 
-<h2>
-<a id="step-8-specify-name-server-for-xubuntu" class="anchor" href="#step-8-specify-name-server-for-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 8: Specify name server for Xubuntu.</h2>
+<p>Also, a name server needs to be specified.</p>
 
 <div class="highlight highlight-source-shell"><pre>sudo nano /etc/resolv.conf</pre></div>
 
@@ -170,14 +162,14 @@ gateway 10.152.152.10
 nameserver 10.152.152.10</pre></div>
 
 <h2>
-<a id="step-9-restart-xubuntu" class="anchor" href="#step-9-restart-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 9: Restart Xubuntu</h2>
+<a id="step-8-restart-xubuntu" class="anchor" href="#step-8-restart-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 8: Restart Xubuntu</h2>
 
 <p>Make sure Whonix Gateway is working and restart the Xubuntu. After that, Xubuntu should use
 the Whonix Gateway for all internet trafic.</p>
 
 <p>And now everything should work. You can start <code>firefox</code> and check your ip address at <a href="https://check.torproject.org/">tor check website</a> or in console using <code>elinks</code> or <code>lynx</code>.</p>
 
-<p>For example: </p>
+<p>For example:</p>
 
 <div class="highlight highlight-source-shell"><pre>elinks https://check.torproject.org/</pre></div>
 
@@ -192,11 +184,10 @@ latest monero. How to compile it can be found at
 
 <p>The only problem is initial synchronization, as it will take ages
 through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current
-blockchain is obtained it can be copied blockchain files into Xubuntu VM.</p>
+blockchain is obtained it can be copied into Xubuntu VM.</p>
 
 <p>Running the bitcoin node through tor does not take much bandwitch
-or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires
-downloading ~8GB or more of data.</p>
+or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data.</p>
 
 <h2>
 <a id="how-can-you-help" class="anchor" href="#how-can-you-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can you help?</h2>
