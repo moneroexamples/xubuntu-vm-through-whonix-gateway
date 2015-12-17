@@ -155,8 +155,7 @@ nameserver 10.152.152.10
 Make sure Whonix Gateway is working and restart the Xubuntu. After that, Xubuntu should use
 the Whonix Gateway for all internet trafic.
 
-And now everything should work. You can start `firefox` and check your ip address at https://ipleak.net/
-or in console using `elinks` or `lynx`.
+And now everything should work. You can start `firefox` and check your ip address at [tor check website](https://check.torproject.org/) or in console using `elinks` or `lynx`.
 
 
 ## Monero in Xubuntu VM through Whonix Gateway
