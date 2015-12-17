@@ -11,16 +11,11 @@ Xubuntu is be better because xfxe is much lighter than Unity.
 This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that it
 goes through Whonix Tor gateway.
 
-Please be aware, that not using official
-workstation may reduce your security and anonymity, and if you want highest
-level of privacy, just stick with the official Whonix workstation!
-Dont follow this example if you are extra paranoid.
+**Please be aware, that not using official
+Whonix workstation may reduce your security and anonymity!
+Don't follow this example if you are extra paranoid.**
 
-The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10.
-
-
-The steps here are based on those described [here](https://www.whonix.org/wiki/Ubuntu). However, that
-tutorial can be found outdated in few places.
+The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10, and are based on those described [here](https://www.whonix.org/wiki/Ubuntu).
 
 
 ## Step 1: Download Whonix Gateway VritualBox and Xubuntu images
@@ -29,7 +24,7 @@ For Whonix, go to the Whonix [download website](https://www.whonix.org/wiki/Down
 and download the latest workstation image. At the moment of writing this,
  it is `Whonix-Gateway-12.0.0.3.2.ova`.
 
- For Ubuntu, download `xubuntu-15.10-desktop-amd64.iso` from Xubuntu's [download
+ For Xubuntu, download `xubuntu-15.10-desktop-amd64.iso` from Xubuntu's [download
  page](http://xubuntu.org/getxubuntu/).
 
 
@@ -41,25 +36,23 @@ and download the latest workstation image. At the moment of writing this,
 
 ## Step 3: Install Xubuntu in the VirtualBox
 
-  - `Machine->New` and follow the prompts. I recommend at least 2GB of ram
-     and at least 25 GB of disc space, if you plan to use latest monero in
+  - `Machine->New` and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest monero in
      the VirtualBox.       
-  - Install Xubuntu as you would normally do it.
+  - Install Xubuntu as you would normally do it. In this example, I called it u1555.
   - Install any software you need now (stuff needed to compile latest monero),
    before connecting the Xubuntu to the Whonix gateway. Its much faster now, than updating
    and install everything through tor.
-  - You can also install guest additions. But again, using non offical Whonix
-  workstation can reduce your security.   
+  - You can also install guest additions.
 
 
-## Step 4: Change Xubuntu's network to use Whonix network.
+## Step 4: Change Xubuntu's network to use Whonix network
 
  - `Machine->Settings->Network` and change Adapter 1 from NAT into Internal Network.
  - Make sure that the Name is Whonix.
 
 ![Network setup](https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/network_setup.jpg)
 
-## Step 5: Remove dhcp auto-configuraion packages from Xubuntu.
+## Step 5: Remove dhcp auto-configuraion packages from Xubuntu
 
 You can make VirtualBox snapshot here, just in case something does not work later on,
 and you would like to undo the changes.
@@ -67,7 +60,7 @@ and you would like to undo the changes.
 ```bash
 sudo apt-get remove isc-dhcp-client isc-dhcp-common network-manager network-manager-gnome resolvconf
 ```
-## Step 6: Check the Whonix Gateway IP and network subnet.
+## Step 6: Check the Whonix Gateway IP and network subnet
 
 Start the Whonix Gateway and follow the prompts. Once done, check the gateway IP address and network mask.
 I used the following command:
@@ -79,7 +72,7 @@ cat /etc/network/interfaces.d/30_non-qubes-whonix
 ![Gateway IP address](https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/gateway_ip.jpg)
 
 
-## Step 6: Check the name of network interface in Xubuntu.
+## Step 6: Check the name of network interface in Xubuntu
 
 ```bash
 ifconfing -a
@@ -108,7 +101,7 @@ lo        Link encap:Local Loopback
 So the interface name is `enp0s3`.
 
 
-## Step 7: Make enp0s3 use Whonix gateway.
+## Step 7: Make enp0s3 use Whonix gateway
 
 Need to set static IP for Xubuntu from Whonix network. Thus we need ip of the form
 `10.152.152.xx` where xx is more than 10. For example, `10.152.152.15`.
@@ -136,8 +129,7 @@ gateway 10.152.152.10
 
 ```
 
-
-## Step 8: Specify name server for Xubuntu.
+Also, a name server needs to be specified.
 
 ```bash
 sudo nano /etc/resolv.conf
@@ -150,14 +142,14 @@ and add:
 nameserver 10.152.152.10
 ```
 
-## Step 9: Restart Xubuntu
+## Step 8: Restart Xubuntu
 
 Make sure Whonix Gateway is working and restart the Xubuntu. After that, Xubuntu should use
 the Whonix Gateway for all internet trafic.
 
 And now everything should work. You can start `firefox` and check your ip address at [tor check website](https://check.torproject.org/) or in console using `elinks` or `lynx`.
 
-For example: 
+For example:
 
 ```bash
 elinks https://check.torproject.org/
@@ -175,11 +167,10 @@ latest monero. How to compile it can be found at
 
 The only problem is initial synchronization, as it will take ages
 through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current
-blockchain is obtained it can be copied blockchain files into Xubuntu VM.
+blockchain is obtained it can be copied into Xubuntu VM.
 
 Running the bitcoin node through tor does not take much bandwitch
-or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires
-downloading ~8GB or more of data.
+or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data.
 
 
 ## How can you help?
