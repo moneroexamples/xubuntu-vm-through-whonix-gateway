@@ -7,7 +7,7 @@ of Debian may limit some use cases. For example, its difficult to use
 [Monero](https://getmonero.org/) on a 32-bit Linux system. Monero works best
 with 64-bit operating systems. Also some people may not  
 not want to use Denian, and would like to use something else, such as Ubuntu 15.10. In fact, for use in a VirtualBox,
-Xubuntu is be better because Xfce is much lighter than Unity.
+Xubuntu is better because Xfce is much lighter than Unity.
 
 This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that its internet traffic goes through Whonix Tor gateway.
 
