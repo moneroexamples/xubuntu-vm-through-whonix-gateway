@@ -1,8 +1,5 @@
 # How to set Xubuntu VM to use TOR Whonix gateway
 
-
-{% include test.html %}
-
 Default [whonix](https://www.whonix.org/) workstation is
 based on 32-bit Debian 8.2. This is OK for most cases, since this
 Debian version is from 2015. However, the 32-bit version
@@ -165,3 +162,26 @@ Some Monero are also welcome:
 ```
 48daf1rG3hE1Txapcsxh6WXNe9MLNKtu7W7tKTivtSoVLHErYzvdcpea2nSTgGkz66RFP4GKVAsTV14v6G3oddBTHfxP6tU
 ```    
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = 'https://moneroexamples.github.io/access-blockchain-in-cpp/';
+        this.page.identifier = 'access-blockchain-using-c++'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//moneroexamples.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
