@@ -25,7 +25,7 @@
 <p>Default <a href="https://www.whonix.org/">whonix</a> workstation is
 based on 32-bit Debian 8.2. This is OK for most cases, since this
 Debian version is from 2015. However, the 32-bit version
-of Debian may limit some use cases. For example, its difficult to use <a href="https://getmonero.org/">Monero</a> on a 32-bit Linux system. Monero works best with 64-bit operating systems. Also some people may not want to use Debian, and would like to use something else, such as Xubuntu 15.10.</p>
+of Debian may limit some use cases. For example, its difficult to use <a href="https://getmonero.org/">Monero</a> on a 32-bit Linux system. Monero works best with 64-bit operating systems. Also some people may not want to use Debian, and would like to use something else, such as Xubuntu 15.10 x64.</p>
 
 <p>This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that its internet traffic goes through Whonix Tor gateway.</p>
 
@@ -38,18 +38,17 @@ Whonix workstation may reduce your security and anonymity!</strong></p>
 <a id="step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" class="anchor" href="#step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Download Whonix Gateway VritualBox and Xubuntu images</h2>
 
 <p>For Whonix, go to the Whonix <a href="https://www.whonix.org/wiki/Download">download website</a>
-and download the latest workstation image. At the moment of writing this, it is <code>Whonix-Gateway-12.0.0.3.2.ova</code>.</p>
+and download the latest gateway image. At the moment of writing this, it is called <code>Whonix-Gateway-12.0.0.3.2.ova</code>.</p>
 
 <p>For Xubuntu, download <code>xubuntu-15.10-desktop-amd64.iso</code> from Xubuntu's <a href="http://xubuntu.org/getxubuntu/">download
  page</a>.</p>
 
-<p>## Step 2: Import Whonix workstation to VirtualBox.</p>
+<p>## Step 2: Import Whonix workstation into VirtualBox.</p>
 
 <ul>
-<li>In VirtualBox Manager: <code>File-&gt;Import Appliance</code>
-</li>
-<li>locate the <code>Whonix-Gateway-12.0.0.3.2.ova</code> downloaded</li>
-<li>follow the prompts to import the image.</li>
+<li>In VirtualBox Manager: <code>File-&gt;Import Appliance</code>.</li>
+<li>Locate the <code>Whonix-Gateway-12.0.0.3.2.ova</code> downloaded.</li>
+<li>Follow the prompts to import the image.</li>
 </ul>
 
 <h2>
@@ -57,7 +56,7 @@ and download the latest workstation image. At the moment of writing this, it is 
 
 <ul>
 <li>
-<code>Machine-&gt;New</code> and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space, if you plan to use latest Monero in the VirtualBox.<br>
+<code>Machine-&gt;New</code> and follow the prompts. I recommend at least 2GB of RAM and at least 25 GB of disc space if you plan to use latest Monero in the VirtualBox.<br>
 </li>
 <li>Install Xubuntu as you would normally do it. In this example, I called it u1555.</li>
 <li>Install any software you need now (e.g.,stuff needed to compile latest Monero, vim, etc.),
@@ -95,12 +94,14 @@ I used the following command:</p>
 
 <p><img src="https://raw.githubusercontent.com/moneroexamples/xubuntu-vm-through-whonix-gateway/master/img/gateway_ip.jpg" alt="Gateway IP address"></p>
 
+<p>From the output, we can see that the Whonix Gateway IP is <code>10.152.152.10</code> and network mask is <code>255.255.192.0</code>.</p>
+
 <h2>
 <a id="step-6-check-the-name-of-network-interface-in-xubuntu" class="anchor" href="#step-6-check-the-name-of-network-interface-in-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Check the name of network interface in Xubuntu</h2>
 
 <div class="highlight highlight-source-shell"><pre>ifconfig -a</pre></div>
 
-<p>Gives (part of the output shown)</p>
+<p>Gives (part of the output shown):</p>
 
 <div class="highlight highlight-source-shell"><pre>enp0s3    Link encap:Ethernet  HWaddr 08:00:27:73:b5:e3  
           BROADCAST MULTICAST  MTU:1500  Metric:1
@@ -114,7 +115,7 @@ I used the following command:</p>
 <h2>
 <a id="step-7-make-enp0s3-use-whonix-gateway" class="anchor" href="#step-7-make-enp0s3-use-whonix-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 7: Make enp0s3 use Whonix gateway</h2>
 
-<p>Need to set static IP for Xubuntu from Whonix network. Thus we need IP of the form <code>10.152.152.xx</code> where xx is more than 10. For example <code>10.152.152.15</code>.</p>
+<p>Need to set static IP for Xubuntu to use Whonix network. Thus, we need IP of the form <code>10.152.152.xx</code> where xx is more than 10. For example <code>10.152.152.15</code>.</p>
 
 <div class="highlight highlight-source-shell"><pre>sudo nano /etc/network/interfaces</pre></div>
 
@@ -132,8 +133,7 @@ address 10.152.152.15
 netmask 255.255.192.0  
 
 <span class="pl-c"># Whonix gateway IP</span>
-gateway 10.152.152.10  
-</pre></div>
+gateway 10.152.152.10  </pre></div>
 
 <p>Also, a name server needs to be specified.</p>
 
@@ -147,10 +147,9 @@ nameserver 10.152.152.10</pre></div>
 <h2>
 <a id="step-8-restart-xubuntu" class="anchor" href="#step-8-restart-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 8: Restart Xubuntu</h2>
 
-<p>Make sure Whonix Gateway is working and restart the Xubuntu. After that, Xubuntu should use
-the Whonix Gateway for all internet traffic.</p>
+<p>Make sure Whonix Gateway is working and restart the Xubuntu. After that, Xubuntu should use the Whonix Gateway for all internet traffic.</p>
 
-<p>And now everything should work. You can start <code>firefox</code> and check your ip address at <a href="https://check.torproject.org/">tor check website</a> or in console using <code>elinks</code> or <code>lynx</code>.</p>
+<p>And now everything should be OK. You can start <code>firefox</code> and check your IP address at <a href="https://check.torproject.org/">tor check website</a> or in a terminal using <code>elinks</code> or <code>lynx</code>.</p>
 
 <p>For example:</p>
 
@@ -166,12 +165,10 @@ latest Monero. How to compile it can be found at
 <a href="http://moneroexamples.github.io/compile-monero-ubuntu-1510/">compile-monero-ubuntu-1510</a>.</p>
 
 <p>The only problem is initial synchronization, as it will take ages
-through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current
-blockchain is obtained it can be copied into Xubuntu VM.</p>
+through tor. So better to download the current blockchain without tor before setting up the gateway or on other PC or VM that is not using Tor. Once the current blockchain is obtained it can be copied into Xubuntu VM.</p>
 
 <p>Running the Monero node through tor does not take much bandwidth
-or is not slow, as it is done in real time as block are coming. The only slow thing is the initial synchronization at it requires downloading ~8GB or more of data. Also, it wont be full node, as
-other nodes will not be able to connect to you.</p>
+nor is slow, as it is done in real-time as blocks are coming. The only slow thing is the initial synchronization as it requires downloading ~8GB or more of data. Also, it wont be full node, as other nodes will not be able to connect to you.</p>
 
 <h2>
 <a id="how-can-you-help" class="anchor" href="#how-can-you-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can you help?</h2>
