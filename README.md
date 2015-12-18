@@ -1,5 +1,8 @@
 # How to set Xubuntu VM to use TOR Whonix gateway
 
+
+{% include test.html %}
+
 Default [whonix](https://www.whonix.org/) workstation is
 based on 32-bit Debian 8.2. This is OK for most cases, since this
 Debian version is from 2015. However, the 32-bit version
