@@ -25,14 +25,12 @@
 <p>Default <a href="https://www.whonix.org/">whonix</a> workstation is
 based on 32-bit Debian 8.2. This is OK for most cases, since this
 Debian version is from 2015. However, the 32-bit version
-of Debian may limit some use cases. For example, its difficult to use <a href="https://getmonero.org/">Monero</a> on a 32-bit Linux system. Monero works best with 64-bit operating systems. Also some people may not want to use Debian, and would like to use something else, such as Ubuntu 15.10. In fact, for use in a VirtualBox,
-Xubuntu is better because Xfce is much lighter than Unity.</p>
+of Debian may limit some use cases. For example, its difficult to use <a href="https://getmonero.org/">Monero</a> on a 32-bit Linux system. Monero works best with 64-bit operating systems. Also some people may not want to use Debian, and would like to use something else, such as Xubuntu 15.10.</p>
 
 <p>This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that its internet traffic goes through Whonix Tor gateway.</p>
 
 <p><strong>Please be aware, that not using official
-Whonix workstation may reduce your security and anonymity!
-Don't follow this example if you are extra paranoid.</strong></p>
+Whonix workstation may reduce your security and anonymity!</strong></p>
 
 <p>The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10, and are based on those described <a href="https://www.whonix.org/wiki/Ubuntu">here</a>. Probably there are better ways of doing things described below. But these steps were working for me, so hopefully they will work for you as well.</p>
 
@@ -40,8 +38,7 @@ Don't follow this example if you are extra paranoid.</strong></p>
 <a id="step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" class="anchor" href="#step-1-download-whonix-gateway-vritualbox-and-xubuntu-images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Download Whonix Gateway VritualBox and Xubuntu images</h2>
 
 <p>For Whonix, go to the Whonix <a href="https://www.whonix.org/wiki/Download">download website</a>
-and download the latest workstation image. At the moment of writing this,
- it is <code>Whonix-Gateway-12.0.0.3.2.ova</code>.</p>
+and download the latest workstation image. At the moment of writing this, it is <code>Whonix-Gateway-12.0.0.3.2.ova</code>.</p>
 
 <p>For Xubuntu, download <code>xubuntu-15.10-desktop-amd64.iso</code> from Xubuntu's <a href="http://xubuntu.org/getxubuntu/">download
  page</a>.</p>
@@ -101,7 +98,7 @@ I used the following command:</p>
 <h2>
 <a id="step-6-check-the-name-of-network-interface-in-xubuntu" class="anchor" href="#step-6-check-the-name-of-network-interface-in-xubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 6: Check the name of network interface in Xubuntu</h2>
 
-<div class="highlight highlight-source-shell"><pre>ifconfing -a</pre></div>
+<div class="highlight highlight-source-shell"><pre>ifconfig -a</pre></div>
 
 <p>Gives (part of the output shown)</p>
 
