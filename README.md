@@ -3,14 +3,12 @@
 Default [whonix](https://www.whonix.org/) workstation is
 based on 32-bit Debian 8.2. This is OK for most cases, since this
 Debian version is from 2015. However, the 32-bit version
-of Debian may limit some use cases. For example, its difficult to use [Monero](https://getmonero.org/) on a 32-bit Linux system. Monero works best with 64-bit operating systems. Also some people may not want to use Debian, and would like to use something else, such as Ubuntu 15.10. In fact, for use in a VirtualBox,
-Xubuntu is better because Xfce is much lighter than Unity.
+of Debian may limit some use cases. For example, its difficult to use [Monero](https://getmonero.org/) on a 32-bit Linux system. Monero works best with 64-bit operating systems. Also some people may not want to use Debian, and would like to use something else, such as Xubuntu 15.10.
 
 This example shows how to set-up Xubuntu 15.10 x64 in a VirtualBox so that its internet traffic goes through Whonix Tor gateway.
 
 **Please be aware, that not using official
-Whonix workstation may reduce your security and anonymity!
-Don't follow this example if you are extra paranoid.**
+Whonix workstation may reduce your security and anonymity!**
 
 The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10, and are based on those described [here](https://www.whonix.org/wiki/Ubuntu). Probably there are better ways of doing things described below. But these steps were working for me, so hopefully they will work for you as well.
 
@@ -18,8 +16,7 @@ The steps here were executed on Ubuntu 14.04 x64 and VirtualBox 5.0.10, and are 
 ## Step 1: Download Whonix Gateway VritualBox and Xubuntu images
 
 For Whonix, go to the Whonix [download website](https://www.whonix.org/wiki/Download)
-and download the latest workstation image. At the moment of writing this,
- it is `Whonix-Gateway-12.0.0.3.2.ova`.
+and download the latest workstation image. At the moment of writing this, it is `Whonix-Gateway-12.0.0.3.2.ova`.
 
  For Xubuntu, download `xubuntu-15.10-desktop-amd64.iso` from Xubuntu's [download
  page](http://xubuntu.org/getxubuntu/).
@@ -71,7 +68,7 @@ cat /etc/network/interfaces.d/30_non-qubes-whonix
 ## Step 6: Check the name of network interface in Xubuntu
 
 ```bash
-ifconfing -a
+ifconfig -a
 ```
 
 Gives (part of the output shown)
