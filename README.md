@@ -163,6 +163,8 @@ Some Monero are also welcome:
 48daf1rG3hE1Txapcsxh6WXNe9MLNKtu7W7tKTivtSoVLHErYzvdcpea2nSTgGkz66RFP4GKVAsTV14v6G3oddBTHfxP6tU
 ```    
 
+## Comments
+
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -171,8 +173,8 @@ Some Monero are also welcome:
      */
 
     var disqus_config = function () {
-        this.page.url = 'https://moneroexamples.github.io/access-blockchain-in-cpp/';
-        this.page.identifier = 'access-blockchain-using-c++'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://moneroexamples.github.io/xubuntu-vm-through-whonix-gateway/';
+        this.page.identifier = 'xubuntu-vm-through-whonix-gateway'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
